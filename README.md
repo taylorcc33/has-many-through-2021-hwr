@@ -6,6 +6,13 @@
 2. cd <app_name_here>
 
 ### rails steps
+**NOTE this uses 2.7.2 which you don't have probably run a-d**
+**rm need to be done in root of rails project
+a. remove the  .ruby-version file `rm -r .ruby-version `
+b. remove the  Gemfile.lock `rm -r Gemfile.lock `
+c. in line 4 of Gemfile delete this line `ruby '2.7.2'`
+d. proceed with steps below
+
 1. bundle
 2. rename database, in database.yml find and replace `change_db_name_here` to <app_name_here>
 3. rails db:create db:migrate db:seed
