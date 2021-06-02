@@ -1,5 +1,7 @@
 # Getting started
 
+*MAKE SURE YOU ARE NOT IN A DIRECTY THAT HAS A GIT REPO, IE A RAILS PROJECT OR REACT OR SOMETHING WHEN YOU DO THIS*
+
 ## Steps to clone
 
 1. git clone git@github.com:jimibue/starter_project_sum21.git <app_name_here>
