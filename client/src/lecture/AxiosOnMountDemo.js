@@ -1,14 +1,17 @@
 import React from 'react'
+import ErrorMessage from '../components/ErrorMessage'
+import FormattedMessage from '../components/FormattedMessage'
+import Spinner from '../components/Spinner'
 import StringifyJSON from '../components/StringifyJSON'
 import useAxiosOnMount from '../customHooks/useAxiosOnMount'
 
 const Things = () => {
     // about the useState hook
-    // const {data,loading,error} = useAxiosOnMount('/api/things')
-    const {data,loading,error} = useAxiosOnMount('https://reqres.in/api/users?delay=3')
+     const {data,loading,error} = useAxiosOnMount('/api/things')
+    // const {data,loading,error} = useAxiosOnMount('https://rasdfeqres.in/api/users?delay=3')
 
-    if(loading) return <p>loading</p>
-    if(error) return <p>error occurred </p>
+    if(loading) return <Spinner />
+    if(error) return <ErrorMessage error={error}/>
     return (
         <div>
             <h1>Things</h1>
