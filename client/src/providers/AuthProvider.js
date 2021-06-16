@@ -20,14 +20,41 @@ const AuthProvider = (props) => {
            // go to home page
            history.push('/')
         } catch (err) {
+            alert('err occured check console')
             console.log(err)
             console.log(err.response)
         }
     }
     // logging existing user
-    const handleLogin = () => {}
+    const handleLogin = async (userFormData, history) => {
+         // do axios call here
+         try {
+            let res = await axios.post('/api/auth/sign_in', userFormData)
+            console.log(res)
+            setUser(res.data.data)
+            // go to home page
+            history.push('/')
+         } catch (err) {
+             alert('err occured check console')
+             console.log(err)
+             console.log(err.response)
+         }
+    }
     // loggount logged in user user
-    const handleLogout = () => {}
+    const handleLogout = async (history) => {
+        console.log('handleLogout called')
+        try {
+            let res = await axios.delete('/api/auth/sign_out')
+            console.log(res)
+            setUser(null)
+            history.push('/login')
+        } catch (err) {
+            alert('err occured check console')
+            console.log(err)
+            console.log(err.response)
+        }
+  
+    }
 
     return (
         <AuthContext.Provider value={{
