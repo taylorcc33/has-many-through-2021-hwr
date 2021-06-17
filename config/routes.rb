@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     get '/things', to:'things#index'
     resources :cats, only: [:index, :update]
     get '/demo', to: "cats#demo"
+    get '/my_cats', to: "cats#my_cats"
   end 
 end
