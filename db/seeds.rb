@@ -8,3 +8,14 @@
 
 Thing.create(name:'Thing 1')
 Thing.create(name:'Thing 2')
+
+20.times do
+    name = Faker::Creature::Cat.name
+    breed = Faker::Creature::Cat.breed
+    registry = Faker::Creature::Cat.registry
+    avatar = Faker::Avatar.image(slug: name, size: '100x400', format: 'png', set: 'set4')
+    Cat.create(name: name, breed: breed, registry: registry, avatar: avatar)
+  end
+  
+  puts "#{Cat.all.size} Cats Seeded"
+  

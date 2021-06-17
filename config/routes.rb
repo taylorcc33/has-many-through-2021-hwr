@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     get '/things', to:'things#index'
+    resources :cats, only: [:index, :update]
+    get '/demo', to: "cats#demo"
   end 
 end
