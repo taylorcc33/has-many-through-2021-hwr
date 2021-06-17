@@ -63,8 +63,8 @@ const AuthProvider = (props) => {
             authenticated: user !== null,
             handleRegister,
             handleLogin,
-            handleLogout
-
+            handleLogout,
+            setUser
         }}>
             {props.children}
         </AuthContext.Provider>
