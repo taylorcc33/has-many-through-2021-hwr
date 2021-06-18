@@ -7,6 +7,7 @@ import { Container } from 'semantic-ui-react'
 import FetchUser from "./components/FetchUser";
 import ProtectedRoute from "./components/ProtectedRoute";
 import MyCats from "./pages/MyCats";
+import UpdateUserForm from "./pages/UpdateUserForm";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Switch>
             <ProtectedRoute exact path="/" component={Home} />
             <ProtectedRoute exact path="/my_cats" component={MyCats} />
+            <ProtectedRoute exact path="/update_profile" component={UpdateUserForm} />
             <Route exact path="/demo" component={()=> <p>Demo</p>} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />

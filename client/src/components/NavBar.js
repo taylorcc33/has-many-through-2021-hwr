@@ -12,6 +12,9 @@ const Navbar = () => {
     if(authenticated){
       return (
       <Menu.Menu position='right'>
+        <Link to="/update_profile">
+          <Menu.Item>Profile</Menu.Item>
+        </Link>
         <Menu.Item onClick={()=> handleLogout(history)}>Logout</Menu.Item>
       </Menu.Menu>
       )

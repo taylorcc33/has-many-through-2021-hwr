@@ -9,6 +9,7 @@ class Api::CatsController < ApplicationController
    # where I do need auth
   def index
     render json: User.random_cat(current_user.liked_cats)
+    current_user.posts.create(title:'yo')
     # user = User.first
     # render json: User.random_cat(user.liked_cats)
   end
