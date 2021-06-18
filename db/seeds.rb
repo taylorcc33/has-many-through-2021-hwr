@@ -20,3 +20,22 @@ Cat.destroy_all
   
   puts "#{Cat.all.size} Cats Seeded"
   
+
+
+@course_ids = []
+
+10.times do
+  course = Course.create(name: Faker::ProgrammingLanguage.name)
+  @course_ids << course.id
+end
+
+10.times do
+  student = Student.create(name: Faker::Name.first_name)
+  3.times do
+    student.enrollments.create(course_id: @course_ids.sample, cohort: ["full-time", "part-time"].sample)
+  end
+end
+
+
+puts "courses, students, and enrollments seeded"
+

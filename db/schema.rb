@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_18_160134) do
+ActiveRecord::Schema.define(version: 2021_06_18_201925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,12 +24,34 @@ ActiveRecord::Schema.define(version: 2021_06_18_160134) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "enrollments", force: :cascade do |t|
+    t.bigint "student_id", null: false
+    t.bigint "course_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "cohort"
+    t.index ["course_id"], name: "index_enrollments_on_course_id"
+    t.index ["student_id"], name: "index_enrollments_on_student_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "things", force: :cascade do |t|
@@ -70,5 +92,7 @@ ActiveRecord::Schema.define(version: 2021_06_18_160134) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "enrollments", "courses"
+  add_foreign_key "enrollments", "students"
   add_foreign_key "posts", "users"
 end

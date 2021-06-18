@@ -5,3 +5,8 @@ const MyCourses = () => {
 };
 
 export default MyCourses;
+
+
+// User is like a university admin or something
+// Students have many Courses through Enrollments
+
