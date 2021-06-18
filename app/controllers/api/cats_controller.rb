@@ -23,5 +23,4 @@ class Api::CatsController < ApplicationController
       render json: User.liked(current_user.liked_cats)
   end
 
-
 end
