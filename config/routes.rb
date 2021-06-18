@@ -7,5 +7,8 @@ Rails.application.routes.draw do
     resources :cats, only: [:index, :update]
     get '/demo', to: "cats#demo"
     get '/my_cats', to: "cats#my_cats"
+    resources :students
+    resources :courses
+    resources :enrollments
   end 
 end

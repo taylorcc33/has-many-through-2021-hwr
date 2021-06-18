@@ -20,7 +20,7 @@ Cat.destroy_all
   
   puts "#{Cat.all.size} Cats Seeded"
   
-
+#################################################################
 
 @course_ids = []
 
@@ -35,7 +35,6 @@ end
     student.enrollments.create(course_id: @course_ids.sample, cohort: ["full-time", "part-time"].sample)
   end
 end
-
 
 puts "courses, students, and enrollments seeded"
 
