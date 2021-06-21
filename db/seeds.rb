@@ -9,6 +9,9 @@
 Thing.create(name:'Thing 1')
 Thing.create(name:'Thing 2')
 Cat.destroy_all
+Course.destroy_all
+Student.destroy_all
+
 
 20.times do
     name = Faker::Creature::Cat.name
@@ -37,4 +40,3 @@ end
 end
 
 puts "courses, students, and enrollments seeded"
-

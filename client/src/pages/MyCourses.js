@@ -10,7 +10,10 @@ const MyCourses = () => {
     return enrollmentData.map((e) => {
       return (
         <>
-          <p>{e.student_name}</p>
+          <p>
+            {" "}
+            {e.student_name} - {e.cohort}{" "}
+          </p>
         </>
       );
     });
