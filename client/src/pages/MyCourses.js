@@ -2,6 +2,7 @@ import React from "react";
 import useAxiosOnMount from "../customHooks/useAxiosOnMount";
 import Spinner from "../components/Spinner";
 import ErrorMessage from "../components/ErrorMessage";
+import AComponent from "../components/NewComponent";
 
 const MyCourses = () => {
   const { data, loading, error } = useAxiosOnMount("/api/courses");
@@ -33,7 +34,12 @@ const MyCourses = () => {
 
   if (loading) return <Spinner />;
   if (error) return <ErrorMessage error={error} />;
-  return <>{renderCourses()}</>;
+  return (
+    <>
+      {AComponent()}
+      {renderCourses()}
+    </>
+  );
 };
 
 export default MyCourses;
