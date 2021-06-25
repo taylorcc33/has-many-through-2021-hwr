@@ -9,6 +9,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import MyCats from "./pages/MyCats";
 import UpdateUserForm from "./pages/UpdateUserForm";
 import MyCourses from "./pages/MyCourses";
+import Streamers from "./pages/Streamers";
+import StreamersDemo from "./pages/StreamersDemo";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
               component={UpdateUserForm}
             />
             <Route exact path="/my_courses" component={MyCourses} />
+            <Route exact path="/streamers" component={Streamers} />
+            <Route exact path="/streamersdemo" component={StreamersDemo} />
             <Route exact path="/demo" component={() => <p>Demo</p>} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />

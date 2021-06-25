@@ -50,3 +50,12 @@ export default MyCourses;
 // MyCourses page will show all courses and students registered for them
 
 // Courses index - get all courses with enrollments and student names
+
+
+
+
+
+
+
+
+
