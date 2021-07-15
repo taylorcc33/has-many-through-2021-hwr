@@ -12,8 +12,8 @@ import styled from "styled-components";
 const BootstrapDemo = () => {
   return (
     <>
-      {/* Navbar */}
-      <CustomNavBar variant="dark">
+      {/******* Navbar *******/}
+      <CustomNavBar sticky="top" variant="dark">
         <Container fluid>
           <Navbar.Brand href="#home">
             <LogoImage alt="logo" src={divvyLogo} />
@@ -33,10 +33,10 @@ const BootstrapDemo = () => {
       </CustomNavBar>
 
       <BodyContainer fluid>
-        {/* Hero */}
+        {/******* Hero *******/}
         <HeroDiv>
           <Row>
-            <Col sm={8} xs={12}>
+            <Col lg={8} md={8} sm={8} xs={12}>
               <HeroTitle>
                 The credit & software your business needs to thrive.
               </HeroTitle>
@@ -47,13 +47,13 @@ const BootstrapDemo = () => {
               </HeroSubText>
               <HeroCTAButton variant="primary">Get a Demo</HeroCTAButton>
             </Col>
-            <HeroImageCol sm={4} className="d-none d-sm-block">
+            <HeroImageCol lg={4} md={4} sm={4} className="d-none d-sm-block">
               <HeroImage alt="hero" src={heroImage} />
             </HeroImageCol>
           </Row>
         </HeroDiv>
 
-        {/* Brands */}
+        {/******* Brands *******/}
 
         <Row>
           <Col sm={{ span: 2, offset: 1 }} xs={6}>
@@ -88,7 +88,7 @@ const BootstrapDemo = () => {
           </Col>
         </Row>
 
-        {/* Business Section */}
+        {/******* Business Section *******/}
         <BusinessDiv>
           <Row>
             <Col sm={{ size: 6, order: "first" }} xs={{ order: "last" }}>
@@ -188,11 +188,12 @@ const HeroCTAButton = styled(Button)`
 const HeroImageCol = styled(Col)`
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: right;
 `;
 
 const HeroImage = styled.img`
   height: 500px;
+  float: right;
 `;
 
 const ClientLogo = styled.img`
