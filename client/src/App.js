@@ -11,29 +11,31 @@ import UpdateUserForm from "./pages/UpdateUserForm";
 import MyCourses from "./pages/MyCourses";
 import Streamers from "./pages/Streamers";
 import StreamersDemo from "./pages/StreamersDemo";
+import BootstrapDemo from "./pages/BootstrapDemo";
 
 function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <FetchUser>
-        <Container>
-          <Switch>
-            <ProtectedRoute exact path="/" component={Home} />
-            <ProtectedRoute exact path="/my_cats" component={MyCats} />
-            <ProtectedRoute
-              exact
-              path="/update_profile"
-              component={UpdateUserForm}
-            />
-            <Route exact path="/my_courses" component={MyCourses} />
-            <Route exact path="/streamers" component={Streamers} />
-            <Route exact path="/streamersdemo" component={StreamersDemo} />
-            <Route exact path="/demo" component={() => <p>Demo</p>} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
-          </Switch>
-        </Container>
+        {/* <Container> */}
+        <Switch>
+          <ProtectedRoute exact path="/" component={Home} />
+          <ProtectedRoute exact path="/my_cats" component={MyCats} />
+          <ProtectedRoute
+            exact
+            path="/update_profile"
+            component={UpdateUserForm}
+          />
+          <Route exact path="/my_courses" component={MyCourses} />
+          <Route exact path="/streamers" component={Streamers} />
+          <Route exact path="/streamersdemo" component={StreamersDemo} />
+          <Route exact path="/bootstrapdemo" component={BootstrapDemo} />
+          <Route exact path="/demo" component={() => <p>Demo</p>} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
+        </Switch>
+        {/* </Container> */}
       </FetchUser>
     </>
   );

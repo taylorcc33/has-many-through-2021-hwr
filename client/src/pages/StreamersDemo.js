@@ -179,16 +179,35 @@ const StreamersDemo = () => {
   }, []);
 
   const normalizeData = (data) => {
-    
+    const uniqueGameIds = [...new Set(data.map((d) => d.id))];
+
+    const uniqueGamesArray = [];
+
+    uniqueGameIds.forEach((id) => {
+      let game = data.filter((g) => g.id === id);
+      // console.log("for each loop games", game);
+
+      let cleaned_game = game.map((g) => {
+        return {
+          id: g.id,
+          name: g.name,
+          genre: g.genre,
+        };
+      });
+      console.log("cleaned game", cleaned_game);
+
+      uniqueGamesArray.push(cleaned_game[0]);
+    });
+
+    setGamesData(uniqueGamesArray);
+
+    console.log("uniqueGamesArray", uniqueGamesArray);
+    console.log(uniqueGameIds);
   };
 
   const renderJSX = () => {
     return gamesData.map((g) => {
-      return (
-        <p>
-          {g.name} - {g.streamers.length} people streaming
-        </p>
-      );
+      return <p>{g.name}</p>;
     });
   };
 
